@@ -1,7 +1,7 @@
 let screen = document.querySelector('.screen');
 let buttons = document.querySelectorAll('.btn');
 let clear = document.querySelectorAll('.btn-clear');
-let result = document.querySelectorAll('.btn-result');
+let result = document.querySelector('.btn-result');
 
 buttons.forEach(function (button) {
     button.addEventListener('click', function (e) {
@@ -9,8 +9,7 @@ buttons.forEach(function (button) {
         screen.value += value;
     })
 })
-result.forEach(function (button) {
-    button.addEventListener('click', function (e) {
+result.addEventListener('click', function (e) {
         if (screen.value === "") {
             screen.value = "Input is empty";
         }else {
@@ -18,7 +17,6 @@ result.forEach(function (button) {
             screen.value =answer;
         }
     })
-})
 clear.forEach(function (button) {
     button.addEventListener('click', function (e) {
         screen.value = "";
